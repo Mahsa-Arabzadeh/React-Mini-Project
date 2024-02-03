@@ -1,0 +1,34 @@
+#main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #6e5d5d;
+}
+
+.container {
+  width: 400px;
+  background-color: #c27b77;
+  border-radius: 8px;
+}
+
+#title,
+#counter {
+  color: wheat;
+  font-size: 40px;
+}
+
+.btns {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 30px;
+}
+
+#plus,
+#minus {
+  padding: 0px 30px;
+  font-size: 30px;
+  border-radius: 8px;
+  border: none;
+}

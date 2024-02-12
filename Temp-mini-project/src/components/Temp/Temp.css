@@ -1,0 +1,58 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.app-container {
+  width: 300px;
+  height: 400px;
+  border-radius: 8px;
+  background-color: #000311f4;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 3px 3px 8px 1px #000;
+}
+
+.temprature-display-container {
+  font-size: 80px;
+  color: #ffffffc4;
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.button-container > button {
+  background-color: #cbcbcbe7;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 25px;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.cold {
+  background-color: #0fb9cca4;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hot {
+  background-color: #ff0000d8;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

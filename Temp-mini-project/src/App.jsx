@@ -1,9 +1,10 @@
+import Temp from "./components/Temp/Temp"
 
 function App() {
 
   return (
     <div>
-      <h1>maha</h1>
+      <Temp/>
     </div>
   )
 }

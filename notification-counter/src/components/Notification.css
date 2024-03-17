@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.header {
+  background-color: #2b2828;
+  box-shadow: 1px 1px 8px 3px #2b2828a2;
+  color: #fff;
+  padding: 25px 50px;
+  display: flex;
+}
+
+.logo {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.notif-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  margin-left: 90px;
+}
+
+.notif-box {
+  background-color: #1480be;
+  padding: 3px 17px;
+  border-radius: 10px;
+}
+
+.news {
+  width: 140px;
+  color: #9c9c9c;
+  font-size: 21px;
+}

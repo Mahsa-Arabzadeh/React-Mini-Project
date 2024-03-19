@@ -16,18 +16,7 @@ export default class Notification extends Component {
             ]
           }
 
-          this.getNotification = this.getNotification.bind(this)
 
-    }
-
-
-    getNotification(){
-        if(this.state.Notifications.length > 0){
-          return this.state.Notifications.length
-        } 
-        else{
-          return "null"
-        }   
     }
 
 
@@ -36,10 +25,12 @@ export default class Notification extends Component {
       <div>
         <header className="header">
             <div className="logo">SH</div>
-            <div className="notif-container">
-                <div className="notif-box">{this.getNotification()}</div>
-                <div className="news">Telegram</div>
-            </div>
+            {this.state.Notifications.length > 0 && 
+                        <div className="notif-container">
+                        <div className="notif-box">{this.state.Notifications.length}</div>
+                        <div className="news">Telegram</div>
+                    </div>
+            }
         </header>
       </div>
     )

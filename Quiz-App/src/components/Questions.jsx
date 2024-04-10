@@ -3,6 +3,7 @@ import "./Questions.css"
 
 export default function Questions() {
 
+
   const [question,setQuestion] = useState({
     question: [
       {
@@ -47,22 +48,26 @@ export default function Questions() {
     },
     ]
   })
+
   const [currentQuestion,setCurrentQuestion] = useState({
     currentQuestion: 0 //index of current question. 
   })
 
-
-  // methodes:
-  const showQuestionTitle = (e) => {
-    console.log(e);
-  }
+  // const showBtn = () => {
+  //   question.question[currentQuestion.currentQuestion].answer.map(answer => {
+  //     <button>{answer.answerText}</button>
+  //   })
+  // }
 
   return (
     <div>
-        <div className='container'>
-        <div className="question-title" onClick={(e) => showQuestionTitle(e)}></div>
+      <div className='container'>
+        {/* showing score */}
+        {/* <div className="score-section"></div> */}
+        <div className="question-count"><span>quesiton 1</span></div>
+        <div className="question-title">{question.question[currentQuestion.currentQuestion].questionText}</div>
         <div className="question-box">
-            <button className='question-point'></button>
+
         </div>
       </div>
     </div>

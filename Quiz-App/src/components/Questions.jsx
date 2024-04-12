@@ -59,8 +59,8 @@ export default function Questions() {
   //   })
   // }
 
-  const clickHandler = () => {
-    console.log("fd");
+  const clickHandler = (isCorrect) => {
+    console.log(isCorrect)
   }
 
   return (
@@ -72,7 +72,7 @@ export default function Questions() {
         <div className="question-title">{question.question[currentQuestion.currentQuestion].questionText}</div>
         <div className="question-box">
           {question.question[currentQuestion.currentQuestion].answer.map(answer => (
-            <button onClick={(e) => clickHandler(e)} className="btn-option" key={toString()}>{answer.answerText}</button>
+            <button key={toString()} onClick={clickHandler.bind(this, answer.isCorrect)} className="btn-option">{answer.answerText}</button>
           ))}
         </div>
       </div>

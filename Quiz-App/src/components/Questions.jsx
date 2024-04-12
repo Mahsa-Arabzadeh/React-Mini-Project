@@ -59,6 +59,10 @@ export default function Questions() {
   //   })
   // }
 
+  const clickHandler = () => {
+    console.log("fd");
+  }
+
   return (
     <div>
       <div className='container'>
@@ -67,7 +71,9 @@ export default function Questions() {
         <div className="question-count"><span>quesiton 1</span></div>
         <div className="question-title">{question.question[currentQuestion.currentQuestion].questionText}</div>
         <div className="question-box">
-
+          {question.question[currentQuestion.currentQuestion].answer.map(answer => (
+            <button onClick={(e) => clickHandler(e)} className="btn-option" key={toString()}>{answer.answerText}</button>
+          ))}
         </div>
       </div>
     </div>

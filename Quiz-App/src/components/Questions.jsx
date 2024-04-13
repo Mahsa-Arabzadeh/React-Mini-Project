@@ -49,29 +49,35 @@ export default function Questions() {
     ]
   })
 
-  const [currentQuestion,setCurrentQuestion] = useState({
-    currentQuestion: 0 //index of current question. 
-  })
+  const [currentQuestion,setCurrentQuestion] = useState(0)
 
-  // const showBtn = () => {
-  //   question.question[currentQuestion.currentQuestion].answer.map(answer => {
-  //     <button>{answer.answerText}</button>
-  //   })
-  // }
+  const [score,setScore] = useState(0)
+
+  const [showScore,setShowScore] = useState(false)
+
 
   const clickHandler = (isCorrect) => {
-    console.log(isCorrect)
+    if(isCorrect){
+      console.log("d");
+      setScore(score + 1)
+    }
+    
+    if(question.question.length > 4){
+      setShowScore(true)
+    }
+
+    setCurrentQuestion(currentQuestion + 1)
   }
 
   return (
     <div>
       <div className='container'>
         {/* showing score */}
-        {/* <div className="score-section"></div> */}
-        <div className="question-count"><span>quesiton 1</span></div>
-        <div className="question-title">{question.question[currentQuestion.currentQuestion].questionText}</div>
+        <div className="score-section">Score: {score}</div>
+        <div className="question-count"><span>Quesiton: {currentQuestion + 1}</span></div>
+        <div className="question-title">{question.question[currentQuestion].questionText}</div>
         <div className="question-box">
-          {question.question[currentQuestion.currentQuestion].answer.map(answer => (
+          {question.question[currentQuestion].answer.map(answer => (
             <button key={toString()} onClick={clickHandler.bind(this, answer.isCorrect)} className="btn-option">{answer.answerText}</button>
           ))}
         </div>

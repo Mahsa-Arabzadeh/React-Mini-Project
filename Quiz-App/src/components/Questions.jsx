@@ -62,26 +62,32 @@ export default function Questions() {
       setScore(score + 1)
     }
     
-    if(question.question.length > 4){
+    if(currentQuestion === 3){
       setShowScore(true)
+    }else {
+      setCurrentQuestion(currentQuestion + 1)
     }
 
-    setCurrentQuestion(currentQuestion + 1)
   }
 
   return (
-    <div>
+    <>
       <div className='container'>
         {/* showing score */}
-        <div className="score-section">Score: {score}</div>
-        <div className="question-count"><span>Quesiton: {currentQuestion + 1}</span></div>
-        <div className="question-title">{question.question[currentQuestion].questionText}</div>
-        <div className="question-box">
-          {question.question[currentQuestion].answer.map(answer => (
-            <button key={toString()} onClick={clickHandler.bind(this, answer.isCorrect)} className="btn-option">{answer.answerText}</button>
-          ))}
+        {showScore ? 
+        <div className="score-section">You scored <mark>{score}</mark> out of {question.question.length}</div> : (
+          <div className="question-con">
+              <div className="question-count"><span>Quesiton: {currentQuestion + 1}</span></div>
+              <div className="question-title">{question.question[currentQuestion].questionText}</div>
+              <div className="question-box">
+              {question.question[currentQuestion].answer.map(answer => (
+              <button key={toString()} onClick={clickHandler.bind(this, answer.isCorrect)} className="btn-option">{answer.answerText}</button>
+              ))}
+              </div>
         </div>
+        )
+        }
       </div>
-    </div>
+    </>
   )
 }

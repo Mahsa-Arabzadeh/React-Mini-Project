@@ -19,8 +19,12 @@ export default function Ticket() {
 
 
   return (
-    <div>
-        
-    </div>
+    <>
+        <div className="container">
+        <select className="country-select">
+            <option value="">Select a country</option>
+        </select>
+        </div>
+    </>
   )
 }

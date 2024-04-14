@@ -17,12 +17,37 @@ export default function Ticket() {
         mainProvinceCities: []
     })
 
+    const selectHandling = (e) => {
+        let mainCountry = e.target.value
+
+        if(mainCountry === "SELECT"){
+            setMainProvinceCities({
+                mainProvinceCities: []
+            })
+        }else{
+            let mainCountryCities = countriesData.countriesData[mainCountry]
+            setMainProvinceCities({
+                mainProvinceCities: mainCountryCities
+            })
+        }
+    }
+
 
   return (
     <>
         <div className="container">
-        <select className="country-select">
-            <option value="">Select a country</option>
+        <select className="select-box" onChange={(e) => selectHandling(e)}>
+            <option className="option-box" value="SELECT">Select a country</option>
+            <option className="option-box" value="Iran">Iran</option>
+            <option className="option-box" value="Turkey">Turkey</option>
+            <option className="option-box" value="US">United State</option>
+        </select>
+        <select className="select-box" >
+            {mainProvinceCities.mainProvinceCities.length ?  mainProvinceCities.mainProvinceCities.map(city => (
+                <option value={city}>{city}</option>
+            )) : (
+                <option value={"SELECT"}>Please select...</option>
+            ) }
         </select>
         </div>
     </>

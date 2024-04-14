@@ -7,10 +7,23 @@ body {
 
 .container {
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  width: 500px;
+  width: 700px;
   height: 100px;
   padding: 0px 20px;
   border-radius: 8px;
   background-color: #de5516;
+}
+
+.select-box,
+.option-box {
+  padding: 10px;
+  width: 300px;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  color: #343434cf;
+  cursor: pointer;
+  box-shadow: 2px 4px 13px 1px #4c4c4c66;
 }

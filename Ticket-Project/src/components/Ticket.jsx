@@ -32,7 +32,6 @@ export default function Ticket() {
         }
     }
 
-
   return (
     <>
         <div className="container">

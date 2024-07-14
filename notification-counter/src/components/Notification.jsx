@@ -16,24 +16,27 @@ export default class Notification extends Component {
             ]
           }
 
+          this.getNotification = this.getNotification.bind(this)
 
     }
 
+
+    getNotification(){
+        // this.state.Notifications.length > 0 && 
+
+    }
 
   render() {
     return (
       <div>
         <header className="header">
             <div className="logo">SH</div>
-            {this.state.Notifications.length > 0 && 
-                        <div className="notif-container">
-                        <div className="notif-box">{this.state.Notifications.length}</div>
-                        <div className="news">Telegram</div>
-                    </div>
-            }
+            <div className="notif-container">
+                <div className="notif-box"></div>
+                <div className="news">Telegram</div>
+            </div>
         </header>
       </div>
     )
   }
 }
-
